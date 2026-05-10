@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EE Maria Catharina Comino - Taboão da Serra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003366; /* Azul mais escuro e elegante */
+            --accent: #ffcc00;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #003366 0%, #0059b3 100%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            color: white;
+        }
+
+        /* Logo com o link que você enviou */
+        .logo-circulo {
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid var(--accent);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        .logo-circulo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 { margin: 0; font-size: 2.2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+
+        /* Sistema de Abas Interativas */
+        .main-card {
+            max-width: 900px;
+            margin: -20px auto 50px;
+            width: 90%;
+            background: var(--glass);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #eee;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .tab-link {
+            flex: 1;
+            padding: 20px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        .tab-link:hover { background: #f9f9f9; }
+        .tab-link.active {
+            background: white;
+            color: var(--primary);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Estilo dos textos e avisos */
+        h2 { color: var(--primary); margin-top: 0; }
+        .card-aviso {
+            background: #fffbe6;
+            border: 1px solid #ffe58f;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: white;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .nav-tabs { flex-direction: column; }
+            h1 { font-size: 1.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-circulo">
+        <img src="https://instagram.fcgh39-1.fna.fbcdn.net/v/t51.2885-19/491372815_1075764281052318_2588869440420719161_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDcyLmMyIn0&_nc_ht=instagram.fcgh39-1.fna.fbcdn.net&_nc_cat=106&_nc_oc=Q6cZ2gEGMthsHjWBr1x8BfybFDcQuOkfSOXe705T0HqqBoi8FBdqUHix5vEr_g8vPIk5kUyxTRdLup90ZaXQUXiRmVS0&_nc_ohc=uxGgtcabXBoQ7kNvwFJil51&_nc_gid=uu321PKlfdcU5qalbanukQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Af6YS5BpJh-ZEp6ZMskGYBRMsZ-wP9pfvSFhl3inxQxG1g&oe=6A056068&_nc_sid=7a9f4b" alt="Logo EE Maria Catharina Comino">
+    </div>
+    <h1>EE Maria Catharina Comino</h1>
+    <p>Taboão da Serra - São Paulo</p>
+</header>
+
+<div class="main-card">
+    <div class="nav-tabs">
+        <button class="tab-link active" onclick="mudarAba(event, 'inicio')">Início</button>
+        <button class="tab-link" onclick="mudarAba(event, 'avisos')">Mural</button>
+        <button class="tab-link" onclick="mudarAba(event, 'sobre')">A Escola</button>
+        <button class="tab-link" onclick="mudarAba(event, 'contato')">Contato</button>
+    </div>
+
+    <div id="inicio" class="tab-content active">
+        <h2>Bem-vindos!</h2>
+        <p>Este é o novo espaço digital da nossa escola em Taboão da Serra. Aqui buscamos fortalecer o vínculo entre alunos, famílias e a equipe pedagógica.</p>
+        <p>Explore as abas para conferir as novidades e calendários.</p>
+    </div>
+
+    <div id="avisos" class="tab-content">
+        <h2>Mural de Avisos</h2>
+        <div class="card-aviso">
+            <strong>📢 Matrículas 2026:</strong> Fiquem atentos aos prazos de renovação na secretaria.
+        </div>
+        <div class="card-aviso">
+            <strong>🎨 Projeto Arte na Escola:</strong> Exposição dos trabalhos dos alunos do 9º ano na próxima quarta.
+        </div>
+    </div>
+
+    <div id="sobre" class="tab-content">
+        <h2>Nossa Instituição</h2>
+        <p>A EE Maria Catharina Comino é referência em Taboão da Serra, focada na formação de cidadãos conscientes e preparados para o mercado de trabalho e para a vida acadêmica.</p>
+        <p>Contamos com salas de informática, biblioteca e uma equipe dedicada ao sucesso de cada estudante.</p>
+    </div>
+
+    <div id="contato" class="tab-content">
+        <h2>Fale Conosco</h2>
+        <p><strong>📍 Localização:</strong> Taboão da Serra, SP</p>
+        <p><strong>📧 E-mail:</strong> eemariacatharina@educacao.sp.gov.br</p>
+        <p><strong>📞 Telefone:</strong> (11) 4787-XXXX</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 EE Maria Catharina Comino - Projeto Desenvolvido para a Escola.
+</footer>
+
+<script>
+    function mudarAba(evt, abaNome) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("tab-link");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].classList.remove("active");
+        }
+        document.getElementById(abaNome).style.display = "block";
+        document.getElementById(abaNome).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
